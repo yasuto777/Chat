@@ -28,6 +28,8 @@ if($result = mysqli_query($mysqli,"SELECT * FROM table1")){
 		echo "<div class=\"arrow_name\">".htmlspecialchars($row['user'])."</div>";
 		echo "<div class=\"arrow_box\">".htmlspecialchars($row['message'])."</div>";
 		echo "<div class=\"send_time\">".$row['dt']."</div>";
+		$latest = $row['dt'];
+		echo $latest;
 	}
 	//Free $result
 	mysqli_free_result($result);
