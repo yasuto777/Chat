@@ -3,10 +3,19 @@
 date_default_timezone_set('Asia/Tokyo');
 
 /*####### MySQL #########*/
-$host = "localhost";
-$dbuser = "chatadmin";
-$dbpass = "talk";
-$db = "chat";
+// Local DB
+//$host = "localhost";
+//$dbuser = "chatadmin";
+//$dbpass = "talk";
+//$db = "chat";
+
+// heroku DB
+$host = "us-cdbr-iron-east-03.cleardb.net";
+$dbuser = "b09d0ee9c1901c";
+$dbpass = "24cd1b17";
+$db = "heroku_d3f2a55ebc3f0af";
+$dbtable = "table1";
+
 // Connect to MySQL
 $mysqli = mysqli_connect($host,$dbuser,$dbpass,$db);
 
@@ -22,6 +31,8 @@ $now = date("Y-m-d H:i:s");
 
 $new_user = htmlspecialchars($user);
 $new_message = htmlspecialchars($message);
+
+
 //Send query to MySQL
 if(mysqli_query($mysqli,"INSERT INTO table1 (user,message,dt) VALUES('$user','$message','$now')") === TRUE){
 
