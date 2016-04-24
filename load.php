@@ -1,11 +1,11 @@
 <?php
 
 // heroku DB
-$host = "us-cdbr-iron-east-03.cleardb.net";
-$dbuser = "b09d0ee9c1901c";
-$dbpass = "24cd1b17";
-$db = "heroku_d3f2a55ebc3f0af";
-$dbtable = "table1";
+//$host = "us-cdbr-iron-east-03.cleardb.net";
+//$dbuser = "b09d0ee9c1901c";
+//$dbpass = "24cd1b17";
+//$db = "heroku_d3f2a55ebc3f0af";
+//$dbtable = "table1";
 
 // Local DB
 //$host = "localhost";
@@ -21,7 +21,7 @@ if(mysqli_connect_errno()){
 	exit();
 }
 
-if($result = mysqli_query($mysqli,"SELECT * FROM table1")){
+if($result = mysqli_query($mysqli,"SELECT * FROM $dbtable")){
 
 	//Get associative array
 	while($row = mysqli_fetch_assoc($result)){
