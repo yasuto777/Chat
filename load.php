@@ -13,7 +13,7 @@
 //$dbpass = "talk";
 //$db = "chat";
 // Connecton setting to MySQL
-include('./heroku_MySQL');
+include('./heroku_MySQL.php');
 
 $mysqli = mysqli_connect($host,$dbuser,$dbpass,$db);
 
