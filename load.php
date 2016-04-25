@@ -18,7 +18,7 @@ if($result = mysqli_query($mysqli,"SELECT * FROM $dbtable")){
 		echo "<div class=\"arrow_name\">".htmlspecialchars($row['user'])."</div>";
 		echo "<div class=\"arrow_box\">".htmlspecialchars($row['message'])."</div>";
 		echo "<div class=\"send_time\">".$row['dt']."</div>";
-		$latest = $row['dt'];
+		$latest = $row['id'];
 		//echo $latest;
 	}
 	//Free $result
