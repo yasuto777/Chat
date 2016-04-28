@@ -1,6 +1,9 @@
 <?php
-//MySQL setting
-include('./localdb.php');
+
+// First load
+function load(){
+
+include('./heroku_MySQL.php');
 
 $mysqli = mysqli_connect($host,$dbuser,$dbpass,$db);
 
@@ -10,9 +13,8 @@ if(mysqli_connect_errno()){
 	exit();
 }
 
-// First load
-function load(){
 	if($result = mysqli_query($mysqli,"SELECT * FROM $dbtable")){
+
 		//Get associative array
 		while($row = mysqli_fetch_assoc($result)){
 			echo "<div class=\"arrow_name\">".htmlspecialchars($row['user'])."</div>";
@@ -32,7 +34,8 @@ function update(){
 	
 }
 
-switch($_POST['mode']){
+$mode = $_POST['mode'];
+switch($mode){
 case 0://First load
 	load();
 	break;
