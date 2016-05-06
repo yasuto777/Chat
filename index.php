@@ -5,13 +5,19 @@
 		<title>Chat</title>
 		<link rel="stylesheet" href="index.css">
 <script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/main.js"></script>
+<!--script src="js/main.js"></script-->
+<script type="text/javascript" src="js/comet.js"></script>
 </head>
 <body>
 <h1>リアルタイムチャット</h1>
 <div class="outputField">
 <br>
-<?php include './load.php'; ?>
+<!-- First Load -->
+<!--?php
+include './load.php';
+?-->
+<script>load();</script>
+<!-- comet -->
 </div>
 
 	<div class="inputField">

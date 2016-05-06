@@ -59,6 +59,14 @@ function load(){
 
 //{{{ function send
 function send(){
+	//Setting for use database variables
+	global $host;
+	global $dbuser;
+	global $dbpass;
+	global $db;
+	global $dbtable;
+	global $mysqli;
+
 	$user = htmlspecialchars($_POST['user']);
 	$message = htmlspecialchars($_POST['message']);
 	$now = date("Y-m-d H:i:s");
